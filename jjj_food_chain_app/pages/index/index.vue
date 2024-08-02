@@ -108,19 +108,19 @@ export default {
 					self.user = res.data.user;
 					//弹出收藏
 					// #ifdef  MP-WEIXIN
-					let isFirst = uni.getStorageSync('isFirst');
-					if (isFirst == '' && res.data.setting.collection.status == '1') {
-						self.is_collection = true;
-						uni.setStorageSync('isFirst', 1);
-					}
-					self.is_follow = res.data.setting.officia.status;
+					// let isFirst = uni.getStorageSync('isFirst');
+					// if (isFirst == '' && res.data.setting.collection.status == '1') {
+					// 	self.is_collection = true;
+					// 	uni.setStorageSync('isFirst', 1);
+					// }
+					// self.is_follow = res.data.setting.officia.status;
 					// #endif
 					// 首页推送
-					let homepushName = uni.getStorageSync('homepushName');
-					if (res.data.setting && res.data.setting.homepush.isOpen && homepushName != res.data.setting.homepush.name) {
-						self.homepush_data = res.data.setting.homepush;
-						self.is_homepush = true;
-					}
+					// let homepushName = uni.getStorageSync('homepushName');
+					// if (res.data.setting && res.data.setting.homepush.isOpen && homepushName != res.data.setting.homepush.name) {
+					// 	self.homepush_data = res.data.setting.homepush;
+					// 	self.is_homepush = true;
+					// }
 					// 配置微信扫一扫参数
 					//#ifdef H5
 					if (self.urldata != '') {

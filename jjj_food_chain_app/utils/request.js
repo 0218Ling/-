@@ -36,15 +36,15 @@ function requestFun(app) {
                     });
                     return false;
                 } else if (res.data.code === 10) {
-					/* 店铺不存在 */
-					this.showError(res.data.msg, function() {
-						uni.removeStorageSync('selectedId');
-						uni.reLaunch({
-							url:'/pages/index/index'
-						})
-					});
-					return false;
-				}else {
+                    /* 店铺不存在 */
+                    this.showError(res.data.msg, function () {
+                        uni.removeStorageSync('selectedId');
+                        uni.reLaunch({
+                            url: '/pages/index/index'
+                        })
+                    });
+                    return false;
+                } else {
                     success && success(res.data);
                 }
             },
@@ -174,12 +174,7 @@ function requestFun(app) {
         /*
              wxOpen true 开启微信授权 false 不开启微信授权
          */
-        let wxOpen = uni.getStorageSync('wxOpen');
-        if (wxOpen) {
-            this.gotoPage("/pages/login/login");
-        } else {
-            this.gotoPage("/pages/login/weblogin");
-        }
+        this.gotoPage("/pages/login/login");
         // #endif
     };
 }

@@ -33,6 +33,9 @@ let AppSettingApi = {
   editPay(data, errorback) {
     return request._postBody('/shop/appSetting/app/pay', data, errorback);
   },
+  uploadP12(data, errorback) {
+    return request._upload('/shop/appSetting/app/uploadP12', data, errorback);
+  },
 }
 
 export default AppSettingApi;
